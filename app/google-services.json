@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1064886117920",
+    "project_id": "jobbox-android",
+    "storage_bucket": "jobbox-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064886117920:android:03c0a55091f32c78cbbe45",
+        "android_client_info": {
+          "package_name": "com.example.jobbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064886117920-hg8j4j2ttbksfll5nu7c6dr5vdi59ofq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-oiHE2fErR15iU4YyzYFBlgAH1Y08tvQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064886117920-hg8j4j2ttbksfll5nu7c6dr5vdi59ofq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

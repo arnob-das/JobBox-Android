@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:background="#FADCDCDC"
+    tools:context=".authentication.Login">
+
+
+    <TextView
+        android:id="@+id/loginWelcomeBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Back"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/loginParagraph"
+        android:layout_below="@+id/loginWelcomeBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:layout_marginRight="15dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" />
+
+    <RelativeLayout
+        android:id="@+id/emailSection"
+        android:layout_below="@+id/loginParagraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:id="@+id/emailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:layout_below="@+id/emailText"
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#30ffffff"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:hint="user@email.com"
+            android:inputType="textEmailAddress" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/passwordSection"
+        android:layout_below="@+id/emailSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:id="@+id/passwordText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:layout_below="@+id/passwordText"
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#30ffffff"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:hint="********"
+            android:inputType="textPassword" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/forgetPasswordSection"
+        android:layout_below="@id/passwordSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forget Password?"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/buttonSection"
+        android:layout_below="@id/forgetPasswordSection"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="20sp"
+            android:background="@color/button"
+            />
+
+        <Button
+            android:id="@+id/loginWithGoogleButton"
+            android:layout_below="@id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:background="@color/purple"
+            android:text="Login With Google"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/signUpTextSection"
+        android:layout_below="@id/buttonSection"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't Have an account?   "
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/signUpLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange"
+            android:text="Sign Up"
+            android:textSize="20sp"
+            />
+
+    </LinearLayout>
+</RelativeLayout>
