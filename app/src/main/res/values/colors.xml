@@ -8,4 +8,6 @@
     <color name="button">#130160</color>
     <color name="purple">#D6CDFE</color>
     <color name="orange">#FF9228</color>
+    <color name="forgetPasswordSurTitle">#524B6B</color>
+    <color name="forgetPasswordEmailColor">#150B3D</color>
 </resources>

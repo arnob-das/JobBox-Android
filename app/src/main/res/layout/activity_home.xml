@@ -13,4 +13,13 @@
         android:text="TextView"
         tools:layout_editor_absoluteX="191dp"
         tools:layout_editor_absoluteY="244dp" />
+
+    <Button
+        android:layout_below="@id/textView3"
+        android:id="@+id/logoutButton"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        />
 </RelativeLayout>

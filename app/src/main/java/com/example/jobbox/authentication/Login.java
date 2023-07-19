@@ -36,14 +36,9 @@ public class Login extends AppCompatActivity {
     EditText emailText;
     EditText passwordText;
     Button loginButton,loginWithGoogleButton;
-    TextView signUpLink;
+    TextView signUpLink,forgetPasswordLink;
 
     FirebaseAuth mAuth;
-
-    private void navigateToActivity() {
-        Intent intent = new Intent(Login.this, SignUp.class);
-        startActivity(intent);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +50,7 @@ public class Login extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         loginWithGoogleButton=findViewById(R.id.loginWithGoogleButton);
         signUpLink = findViewById(R.id.signUpLink);
+        forgetPasswordLink = findViewById(R.id.forgetPasswordLink);
 
         // underline text
         signUpLink.setPaintFlags(signUpLink.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -130,11 +126,21 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        // forget password page navigation
+        forgetPasswordLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, ForgetPassword.class);
+                startActivity(intent);
+            }
+        });
+
         // navigate to sign up page
         signUpLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToActivity();
+                Intent intent = new Intent(Login.this, SignUp.class);
+                startActivity(intent);
             }
         });
     }
