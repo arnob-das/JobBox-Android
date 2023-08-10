@@ -17,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jobbox.R;
-import com.example.jobbox.homePage.Home;
 import com.example.jobbox.splashScreen.SplashScreen;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;

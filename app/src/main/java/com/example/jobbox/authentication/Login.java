@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jobbox.R;
-import com.example.jobbox.homePage.Home;
+import com.example.jobbox.navigationDrawer;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -90,7 +90,7 @@ public class Login extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     if(mAuth.getCurrentUser().isEmailVerified()){
-                                        Intent intent = new Intent(Login.this, Home.class);
+                                        Intent intent = new Intent(Login.this, navigationDrawer.class);
                                         startActivity(intent);
                                         finish();
                                     }else {
@@ -186,9 +186,9 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
                             System.out.println(user.getEmail().toString());
-                            Intent intent = new Intent(Login.this, Home.class);
-                            startActivity(intent);
-                            finish();
+//                            Intent intent = new Intent(Login.this, BottomNavigation.class);
+//                            startActivity(intent);
+//                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(Login.this, "Authentication failed.",

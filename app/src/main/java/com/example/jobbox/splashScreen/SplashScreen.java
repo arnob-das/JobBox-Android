@@ -13,7 +13,8 @@ import android.widget.Toast;
 import com.example.jobbox.R;
 import com.example.jobbox.authentication.ForgetPassword;
 import com.example.jobbox.authentication.Login;
-import com.example.jobbox.homePage.Home;
+import com.example.jobbox.navigationDrawer;
+import com.example.jobbox.ui.home.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -42,9 +43,10 @@ public class SplashScreen extends AppCompatActivity {
 //                startActivity(intent);
 
                 if (currentUser == null) {
+//                    intent = new Intent(SplashScreen.this, Login.class);
                     intent = new Intent(SplashScreen.this, Login.class);
                 } else {
-                    intent = new Intent(SplashScreen.this, Home.class);
+                    intent = new Intent(SplashScreen.this, navigationDrawer.class);
                 }
 
                 // Check if intent is not null before starting the activity

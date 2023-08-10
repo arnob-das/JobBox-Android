@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation5"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.jobbox.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.jobbox.ui.post.PostFragment"
+        android:label="Post Job"
+        tools:layout="@layout/fragment_postjob" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.jobbox.ui.search.SearchJobFragment"
+        android:label="Search Jobs"
+        tools:layout="@layout/fragment_jobs">
+
+
+
+    </fragment>
+</navigation>
