@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.example.jobbox.ApplyJob.ApplyToJob;
 import com.example.jobbox.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +30,7 @@ public class JobDetails extends AppCompatActivity {
     private CheckBox internCheckBox;
     private EditText descriptionEditText;
     private EditText salaryEditText;
+    private Button applyJobButton;
 
     private DatabaseReference jobsRef;
 
@@ -48,6 +52,8 @@ public class JobDetails extends AppCompatActivity {
         internCheckBox = findViewById(R.id.intern);
         descriptionEditText = findViewById(R.id.description);
         salaryEditText = findViewById(R.id.salary);
+
+        applyJobButton = findViewById(R.id.applyNowBtnId);
 
         Intent intent = getIntent();
         if (intent != null) {
@@ -106,6 +112,18 @@ public class JobDetails extends AppCompatActivity {
                     // Handle any errors that occur during the database query
                 }
             });
+
+            // apply now button functionality
+            applyJobButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(JobDetails.this, ApplyToJob.class);
+                    intent.putExtra("jobId", jobId);
+                    startActivity(intent);
+                }
+            });
         }
+
+
     }
 }

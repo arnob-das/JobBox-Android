@@ -15,6 +15,9 @@
         android:theme="@style/Theme.JobBox"
         tools:targetApi="31">
         <activity
+            android:name=".ApplyJob.ApplyToJob"
+            android:exported="false" />
+        <activity
             android:name=".JobDetails.JobDetails"
             android:exported="false" />
         <activity

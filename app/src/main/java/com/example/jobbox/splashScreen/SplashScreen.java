@@ -41,8 +41,10 @@ public class SplashScreen extends AppCompatActivity {
 
                 if (currentUser == null) {
                     intent = new Intent(SplashScreen.this, Login.class);
-                } else if (currentUser.getDisplayName() == null || currentUser.getDisplayName().isEmpty()) {
+                }
+                if (currentUser.getDisplayName() == null || currentUser.getPhotoUrl()==null || currentUser.getDisplayName().toString()==""||currentUser.getDisplayName().isEmpty()) {
                     Log.d("userName",currentUser.getDisplayName());
+                    Log.d("email",currentUser.getEmail());
                     intent = new Intent(SplashScreen.this, UserProfile.class);
 
                 } else {
