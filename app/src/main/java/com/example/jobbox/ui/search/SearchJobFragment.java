@@ -54,6 +54,7 @@ public class SearchJobFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
                     Job job = dataSnapshot.getValue(Job.class);
+                    job.setJobId(dataSnapshot.getKey()); // Set the job ID from the Firebase key
                     jobArrayList.add(job);
                 }
                 jobItemAdapter.notifyDataSetChanged();

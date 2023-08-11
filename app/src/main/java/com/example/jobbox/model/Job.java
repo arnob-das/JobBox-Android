@@ -13,6 +13,12 @@ public class Job {
         private String salary;
         String jobPostBy;
 
+    private String jobId; // Add this field
+
+    // Other fields, constructors, getters and setters
+
+
+
         // Empty constructor (required by Firebase)
         public Job() {}
 
@@ -111,5 +117,13 @@ public class Job {
 
         public String getJobPostBy(){return jobPostBy;}
         public void setJobPostBy(String jobPostBy){this.jobPostBy=jobPostBy;}
+
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
 
 }

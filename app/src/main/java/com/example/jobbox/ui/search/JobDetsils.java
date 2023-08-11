@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.jobbox.R;
+import com.example.jobbox.model.Job;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class JobDetsils extends AppCompatActivity {
 
@@ -15,13 +21,30 @@ public class JobDetsils extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_detsils);
 
-        // Retrieve data from Intent extras
         Intent intent = getIntent();
-        String jobId = intent.getStringExtra("jobId");
-        String jobTitle = intent.getStringExtra("jobTitle");
+        String jobItemId = intent.getStringExtra("jobId");
 
-        // Use the retrieved data as needed
-        TextView titleTextView = findViewById(R.id.titleTextView);
-        titleTextView.setText(jobTitle);
+        DatabaseReference jobRef = FirebaseDatabase.getInstance().getReference("jobs").child(jobItemId);
+
+        TextView jobPositionText = findViewById(R.id.jobPositionText);
+
+        jobRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    Job job = dataSnapshot.getValue(Job.class);
+
+                    jobPositionText.setText(job.getJobPosition());
+
+                } else {
+                    // Job with the specified ID doesn't exist
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Handle onCancelled
+            }
+        });
     }
 }

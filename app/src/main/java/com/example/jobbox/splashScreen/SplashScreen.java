@@ -5,16 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jobbox.R;
-import com.example.jobbox.authentication.ForgetPassword;
 import com.example.jobbox.authentication.Login;
 import com.example.jobbox.navigationDrawer;
-import com.example.jobbox.ui.home.HomeFragment;
+import com.example.jobbox.userName.UserProfile;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -39,12 +39,12 @@ public class SplashScreen extends AppCompatActivity {
                 FirebaseUser currentUser = mAuth.getCurrentUser();
                 Intent intent;
 
-//                intent = new Intent(SplashScreen.this, Login.class);
-//                startActivity(intent);
-
                 if (currentUser == null) {
-//                    intent = new Intent(SplashScreen.this, Login.class);
                     intent = new Intent(SplashScreen.this, Login.class);
+                } else if (currentUser.getDisplayName() == null || currentUser.getDisplayName().isEmpty()) {
+                    Log.d("userName",currentUser.getDisplayName());
+                    intent = new Intent(SplashScreen.this, UserProfile.class);
+
                 } else {
                     intent = new Intent(SplashScreen.this, navigationDrawer.class);
                 }

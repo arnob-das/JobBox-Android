@@ -73,13 +73,7 @@ public class JobItemAdapter extends RecyclerView.Adapter<JobItemAdapter.JobItemV
             public void onClick(View v) {
                 // Create an Intent to start the new activity
                 Intent intent = new Intent(context, JobDetsils.class);
-                // Pass any relevant data to the new activity using Intent extras
-//                intent.putExtra("jobId", jobs.getJobId()); // Replace with your actual field name
-//                intent.putExtra("jobTitle", jobs.getTitle()); // Replace with your actual field name
-
-                intent.putExtra("jobId", "Jobs id"); // Replace with your actual field name
-                intent.putExtra("jobTitle", "jobs title"); // Replace with your actual field name
-                // Start the new activity
+                intent.putExtra("jobId", jobs.getJobId());
                 context.startActivity(intent);
             }
         });

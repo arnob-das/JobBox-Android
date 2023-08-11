@@ -15,6 +15,9 @@
         android:theme="@style/Theme.JobBox"
         tools:targetApi="31">
         <activity
+            android:name=".userName.UserProfile"
+            android:exported="false" />
+        <activity
             android:name=".ui.search.JobDetsils"
             android:exported="false" />
         <activity

@@ -25,6 +25,9 @@ import com.example.jobbox.databinding.ActivityNavigationDrawerBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import com.squareup.picasso.Picasso;
+
+
 public class navigationDrawer extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -65,7 +68,8 @@ public class navigationDrawer extends AppCompatActivity {
 
             // Set user image (if available)
             if (currentUser.getPhotoUrl() != null) {
-                userImage.setImageURI(currentUser.getPhotoUrl());
+                Picasso.get().load(currentUser.getPhotoUrl()).into(userImage);
+                //userImage.setImageURI(currentUser.getPhotoUrl());
             }
         }
 

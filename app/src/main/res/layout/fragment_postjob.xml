@@ -161,7 +161,7 @@
                 android:textSize="20sp"
                 />
 
-<!--            salary-->
+            <!--            salary-->
 
             <TextView
                 android:layout_width="match_parent"
