@@ -74,6 +74,7 @@ public class PostFragment extends Fragment {
                 String jobLocation = jobLocationEditText.getText().toString().trim();
                 String company = companyEditText.getText().toString().trim();
                 String description = descriptionEditText.getText().toString().trim();
+                description = description.replace("\n", "<br>");
                 String salary = salaryEditText.getText().toString().trim();
                 boolean isOnSite = onSiteCheckBox.isChecked();
                 boolean isRemote = remoteCheckBox.isChecked();

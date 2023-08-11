@@ -6,13 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.jobbox.JobDetails.JobDetails;
 import com.example.jobbox.R;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jobbox.model.Job;
-import com.example.jobbox.ui.search.JobDetsils;
 
 import java.util.ArrayList;
 
@@ -72,7 +73,7 @@ public class JobItemAdapter extends RecyclerView.Adapter<JobItemAdapter.JobItemV
             @Override
             public void onClick(View v) {
                 // Create an Intent to start the new activity
-                Intent intent = new Intent(context, JobDetsils.class);
+                Intent intent = new Intent(context, JobDetails.class);
                 intent.putExtra("jobId", jobs.getJobId());
                 context.startActivity(intent);
             }
