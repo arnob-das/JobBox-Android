@@ -6,9 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.search.SearchJobFragment">
 
+    <EditText
+        android:id="@+id/searchBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search by job title"
+        android:inputType="text"
+        android:maxLines="1"
+        android:layout_margin="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/jobsList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchBox" />
+
 </RelativeLayout>

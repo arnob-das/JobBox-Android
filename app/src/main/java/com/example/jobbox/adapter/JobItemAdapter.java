@@ -80,6 +80,12 @@ public class JobItemAdapter extends RecyclerView.Adapter<JobItemAdapter.JobItemV
         });
     }
 
+    // Method to update the job list and notify the adapter
+    public void filterList(ArrayList<Job> filteredList) {
+        jobsList = filteredList;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         return jobsList.size();

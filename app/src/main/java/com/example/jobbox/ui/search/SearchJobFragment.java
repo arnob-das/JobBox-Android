@@ -1,9 +1,14 @@
 package com.example.jobbox.ui.search;
 
+import com.example.jobbox.R;
+
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -29,6 +34,8 @@ public class SearchJobFragment extends Fragment {
     private RecyclerView recyclerView;
     DatabaseReference database;
     private JobItemAdapter jobItemAdapter;
+    private EditText searchBox;
+
     ArrayList<Job> jobArrayList;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -39,6 +46,9 @@ public class SearchJobFragment extends Fragment {
         binding = FragmentJobsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        searchBox = root.findViewById(R.id.searchBox);
+
+
         recyclerView = binding.jobsList;
         database = FirebaseDatabase.getInstance().getReference("jobs");
         recyclerView.setHasFixedSize(true);
@@ -48,6 +58,8 @@ public class SearchJobFragment extends Fragment {
 
         jobItemAdapter = new JobItemAdapter(requireContext(), jobArrayList);
         recyclerView.setAdapter(jobItemAdapter);
+
+
 
         database.addValueEventListener(new ValueEventListener() {
             @Override
@@ -66,6 +78,23 @@ public class SearchJobFragment extends Fragment {
             }
         });
 
+        searchBox.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Not needed for your implementation
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filterJobs(s.toString().toLowerCase());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Not needed for your implementation
+            }
+        });
+
         return root;
     }
 
@@ -73,6 +102,17 @@ public class SearchJobFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    // Method to filter jobs based on the search keyword
+    private void filterJobs(String keyword) {
+        ArrayList<Job> filteredList = new ArrayList<>();
+        for (Job job : jobArrayList) {
+            if (job.getJobPosition().toLowerCase().contains(keyword)) {
+                filteredList.add(job);
+            }
+        }
+        jobItemAdapter.filterList(filteredList);
     }
 
 
