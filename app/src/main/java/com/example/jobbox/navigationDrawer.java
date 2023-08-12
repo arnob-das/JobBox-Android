@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jobbox.authentication.Login;
+import com.example.jobbox.userName.UserProfile;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -117,6 +118,9 @@ public class navigationDrawer extends AppCompatActivity {
                     NavController navController = Navigation.findNavController(navigationDrawer.this, R.id.nav_host_fragment_content_navigation_drawer);
                     navController.navigate(R.id.nav_slideshow);
                     return true;
+                } else if (itemId==R.id.nav_profile) {
+                    Intent intent = new Intent(navigationDrawer.this, UserProfile.class);
+                    startActivity(intent);
                 }
                 return false;
             }
